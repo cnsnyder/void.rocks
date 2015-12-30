@@ -21,5 +21,4 @@ var server = app.listen(80, function() {
   var port = server.address().port;
 
   console.log('Example app listening at http://%s:%s', host, port);
-  console.log('Key %s', constants.keys.mailchimp);
 });

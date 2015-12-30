@@ -1,12 +1,34 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var constants = require('./constants.js');
+var fs = require("fs");
+const debug = process.env.MTAPP_DEBUG;
+
+// Try to load the keys
+var keys = undefined;
+try {
+  keys = JSON.parse(fs.readFileSync('keys.json', 'utf8'));
+}
+catch(err) {
+  console.log(err);
+}
+
+if (keys === undefined && debug !=== undefined) {
+  try {
+    keys = JSON.parse(fs.readFileSync('.keys.json', 'utf8'))
+  }
+  catch(err) {
+    console.log(err);
+  }
+}
+
+// Set up express
 var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-
 app.use(express.static('public'));
+
+// Routes
 app.use('/', express.static('public/index.html'))
 
 app.get('/search', function (req, res) {

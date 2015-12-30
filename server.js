@@ -12,7 +12,7 @@ catch(err) {
   console.log(err);
 }
 
-if (keys === undefined && debug !=== undefined) {
+if (keys === undefined && debug !== undefined) {
   try {
     keys = JSON.parse(fs.readFileSync('.keys.json', 'utf8'))
   }

@@ -14,10 +14,10 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-
     <link rel="stylesheet" href="css/style.css" media="screen">
+    <link href="sticky-footer.css" rel="stylesheet">
 
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script> 
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -29,12 +29,16 @@
   </head>
 
   <body>
-  <h1><span><strong>Myles </strong> Travitz</span></h1>
+<!--  <h1><span><strong>Myles </strong> Travitz</span></h1>-->
+<div class="logo">
+  <div><img src="assets/Myles%20Travitz%20Logo%20Icon.svg" style="width: 27%"></div>
+</div>
+
   <div id="subscription">
     <input type="text" id="email" ng-model="search" ng-change="change()" onclick="select()" placeholder="ENTER EMAIL">
     <input type="submit" class="btn btn-lg btn-default" onclick="submit()" id="btn-style" value="SUBMIT">
   </div>
-  <footer class="footer">
+<footer class="footer">
   <div class="container">
     <ul>
       <li class="ui transparent icon-only">
@@ -44,14 +48,14 @@
         <a class="icon twitter" target="_blank" href="https://twitter.com/MylesTravitz"></a>
       </li>
       <li class="ui transparent icon-only">
-        <a class="icon instagram" target="_blank" href="https://www.instagram.com/mylestravitz"></a>
+        <a class="icon soundcloud" target="_blank" href="https://soundcloud.com/myles-travitz"></a>
       </li>
       <li class="ui transparent icon-only">
-        <a class="icon soundcloud" target="_blank" href="https://soundcloud.com/myles-travitz"></a>
+        <a class="icon instagram" target="_blank" href="https://www.instagram.com/mylestravitz"></a>
       </li>
     </ul>
   </div>
-  </footer>
+</footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

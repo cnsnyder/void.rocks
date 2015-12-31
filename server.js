@@ -41,7 +41,7 @@ app.post('/subscribe', function (req, res) {
                                           keys.mailchimp.listId,
                                           function (response_data){
                                             console.log('SERVER response_data: %s', response_data);
-                                            res.json(response_data);
+                                            res.send(response_data);
                                           });
 })
 

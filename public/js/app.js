@@ -8,7 +8,15 @@ angular.module('MTApp', [])
     $scope.email = '';
   }
   $scope.change = function() {
-    console.log('CHANGE')
+    console.log('CHANGE');
+    if ($scope.email == '') {
+        document.getElementById("email").style.border = "solid 1px #40444D";
+        document.getElementById("email").style.color = "#40444D";
+    }
+  }
+  $scope.submit = function() {
+    console.log('SUBMIT');
+
     if (pendingTask){
       clearTimeout(pendingTask);
     }
@@ -17,20 +25,34 @@ angular.module('MTApp', [])
 
   function subscribe(){
     console.log('TEST');
+    if (!verifyEmail()){
+      return;
+    }
     $http.post('http://localhost/subscribe',
      angular.toJson({email_address: $scope.email}))
      .then(function (result) {
-        console.log('A');
-        $scope.result = angular.fromJson(result.data).email;
+        $scope.result = angular.fromJson(result.data);
         console.log($scope.result);
       }, function (result) {
-        console.log('B');
         $scope.result = "ERROR!!!";
       });
     };
+    function verifyEmail(){
+      var is_vaild = false;
+      var emailRegEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+      if ($scope.email.search(emailRegEx) == -1 && $scope.email != '') {
+          document.getElementById("email").style.border = "solid 1px #D7244C";
+          document.getElementById("email").style.color = "#D7244C";
+      }
+      else {
+        document.getElementById("email").style.border = "solid 1px #40444D";
+        document.getElementById("email").style.color = "#40444D";
+        is_vaild = true;
+      }
+      return is_valid;
+    }
 
   $scope.select = function(){
-      console.log('SELECT!!!');
       this.setSelectionRange(0, this.value.length);
     };
 });

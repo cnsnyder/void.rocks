@@ -38,7 +38,7 @@ angular.module('MTApp', [])
       });
     };
     function verifyEmail(){
-      var is_vaild = false;
+      var is_valid = false;
       var emailRegEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
       if ($scope.email.search(emailRegEx) == -1 && $scope.email != '') {
           document.getElementById("email").style.border = "solid 1px #D7244C";
@@ -47,7 +47,7 @@ angular.module('MTApp', [])
       else {
         document.getElementById("email").style.border = "solid 1px #40444D";
         document.getElementById("email").style.color = "#40444D";
-        is_vaild = true;
+        is_valid = true;
       }
       return is_valid;
     }

@@ -1,6 +1,7 @@
 var http = require('http');
 
-exports.listSubscribe = function(email, key, listId) {
+exports.listSubscribe = function(email, key, listId, callback) {
+  var response_data = "";
   var post_data = JSON.stringify({email_address:email,
                                   status:"pending"});
   console.log(post_data);
@@ -21,10 +22,12 @@ exports.listSubscribe = function(email, key, listId) {
     console.log('HEADERS: ' + JSON.stringify(res.headers));
     res.setEncoding('utf8');
     res.on('data', function (chunk) {
+      response_data += chunk;
       console.log('BODY: ' + chunk);
     });
     res.on('end', function() {
       console.log('No more data in response.');
+      callback(response_data);
     });
   });
   req.on('error', function(e) {

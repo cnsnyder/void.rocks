@@ -28,7 +28,7 @@ angular.module('MTApp', [])
     if (!verifyEmail()){
       return;
     }
-    $http.post('http://localhost/subscribe',
+    $http.post('http://void.rocks/subscribe',
      angular.toJson({email_address: $scope.email}))
      .then(function (result) {
         $scope.result = angular.fromJson(result.data);

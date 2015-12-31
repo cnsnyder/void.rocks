@@ -14,7 +14,8 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" media="screen">
+    <link href="sticky-footer.css" rel="stylesheet">
 
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
@@ -25,58 +26,42 @@
     <![endif]-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="../js/app.js"></script>
-  </head>
 
+  </head>
   <body>
 
-    <div class="site-wrapper">
+<!--  <h1><span><strong>Myles </strong> Travitz</span></h1>-->
+  <div class="logo">
+    <div class="row vertical-align"><img src="assets/Myles%20Travitz%20Logo%20Icon.svg" style="width: 27%"></div>
+  </div>
 
-      <div class="site-wrapper-inner">
+  <div id="subscription">
+    <form name ="myform" onSubmit="return verifyEmail()">
+    <input type="text" id="email" ng-model="search" ng-change="change()" onclick="select()" placeholder="ENTER EMAIL">
+    <!--<input type="submit" class="btn btn-lg btn-default" onclick="submit()" id="btn-style" value="SUBMIT">-->
+      <button type="submit" id="btn-style">SUBMIT</button>
+    </form>
+  </div>
 
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">__Myles Travitz__</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-
-          <div class="inner cover">
-            <h1 class="cover-heading">Myles Travitz</h1>
-            <p class="lead">Myles is the hip new upcoming artist of awesome, triangles etc. Sign up for more info below</p>
-            <p class="lead">
-              <div class="form-group">
-                <label for="email">Search:</label>
-                <input type="text" class="form-control"
-                id="email"
-                ng-model="email"
-                onclick="select()"
-                ng-change="change()"
-                placeholder="Enter stuff">
-              </div>
-              <hr><h1>{{email}}</h1>
-              <a class="btn btn-lg btn-default">Sign Up</a>
-            </p>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
+  <footer class="footer">
+    <div class="container">
+        <ul>
+        <li class="ui transparent icon-only">
+          <a class="icon facebook" id="facebook" href="https://www.facebook.com/mylestravitz"></a>
+        </li>
+        <li class="ui transparent icon-only">
+          <a class="icon twitter" target="_blank" href="https://twitter.com/MylesTravitz"></a>
+        </li>
+        <li class="ui transparent icon-only">
+          <a class="icon soundcloud" target="_blank" href="https://soundcloud.com/myles-travitz"></a>
+        </li>
+        <li class="ui transparent icon-only">
+          <a class="icon instagram" target="_blank" href="https://www.instagram.com/mylestravitz"></a>
+        </li>
+      </ul>
     </div>
 
+  </footer>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -85,5 +70,6 @@
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

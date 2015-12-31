@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="MTApp" ng-controller="SearchController">
+<html lang="en" ng-app="MTApp" ng-controller="SubscribeController">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,13 +56,13 @@
                 <label for="email">Search:</label>
                 <input type="text" class="form-control"
                 id="email"
-                ng-model="search"
-                ng-change="change()"
+                ng-model="email"
                 onclick="select()"
+                ng-change="change()"
                 placeholder="Enter stuff">
               </div>
-              <hr><h1>{{result}}</h1>
-              <a class="btn btn-lg btn-default" onclick="submit()">Sign Up</a>
+              <hr><h1>{{email}}</h1>
+              <a class="btn btn-lg btn-default">Sign Up</a>
             </p>
           </div>
 

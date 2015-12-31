@@ -17,7 +17,7 @@ angular.module('MTApp', [])
   };
 
   function fetch(){
-    $http.get('http://localhost/search?q=' + $scope.search)
+    $http.get('http://void.rocks/search?q=' + $scope.search)
      .then(function (result) {
         $scope.result = angular.fromJson(result.data).result;
       }, function (result) {

@@ -5,10 +5,10 @@ angular.module('MTApp', [])
   var pendingTask;
 
   if ($scope.email === undefined) {
-    $scope.email = 'Test';
+    $scope.email = '';
   }
   $scope.change = function() {
-    console.log('CHANGE');
+    console.log('CHANGE')
     if (pendingTask){
       clearTimeout(pendingTask);
     }

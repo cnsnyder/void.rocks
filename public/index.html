@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="MTApp" ng-controller="SearchController">
+<html lang="en" ng-app="MTApp" ng-controller="SubscribeController">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,17 +29,19 @@
 
   </head>
   <body>
+
 <!--  <h1><span><strong>Myles </strong> Travitz</span></h1>-->
   <div class="logo">
     <div class="row vertical-align"><img src="assets/Myles%20Travitz%20Logo%20Icon.svg" style="width: 27%"></div>
   </div>
 
   <div id="subscription">
-    <form name ="myform" onSubmit="return verifyEmail()">
-    <input type="text" id="email" ng-model="search" ng-change="change()" onclick="select()" placeholder="ENTER EMAIL">
+    <form name ="myform">
+    <input type="text" id="email" ng-model="email" ng-change="change()" onclick="select()" placeholder="ENTER EMAIL">
     <!--<input type="submit" class="btn btn-lg btn-default" onclick="submit()" id="btn-style" value="SUBMIT">-->
-      <button type="submit" id="btn-style">SUBMIT</button>
+      <button id="btn-style" ng-click="submit()">SUBMIT</button>
     </form>
+    <h1> {{result}} </h1>
   </div>
 
   <footer class="footer">

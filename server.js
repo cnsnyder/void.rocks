@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require("fs");
+var mailchimp = require("./mailchimp.js");
 const debug = process.env.MTAPP_DEBUG;
 
 // Try to load the keys
@@ -11,7 +12,6 @@ try {
 catch(err) {
   console.log(err);
 }
-
 if (keys === undefined && debug !== undefined) {
   try {
     keys = JSON.parse(fs.readFileSync('.keys.json', 'utf8'))
@@ -31,16 +31,23 @@ app.use(express.static('public'));
 // Routes
 app.use('/', express.static('public/index.html'))
 
-app.get('/search', function (req, res) {
-  for (param in req.query){
-    console.log(req.query[param]);
-  };
-  res.json({result: req.query.q});
+// Forward the submission to mailchimp after adding our api key
+app.post('/subscribe', function (req, res) {
+  console.log("Processing request with body: %s", JSON.stringify(req.body));
+  // send to mailchimp
+  console.log(keys);
+  response_data = mailchimp.listSubscribe(req.body.email_address,
+                                          keys.mailchimp.key,
+                                          keys.mailchimp.listId,
+                                          function (response_data){
+                                            console.log('SERVER response_data: %s', response_data);
+                                            res.send(response_data);
+                                          });
 })
 
 var server = app.listen(80, function() {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log('App listening at http://%s:%s', host, port);
 });

@@ -6,7 +6,6 @@ function verifyEmail(){
         document.getElementById("email").style.color = "#D7244C";
     }
     else {
-        alert("Woohoo!  The email address is in the correct format.");
         status = true;
     }
     return status;

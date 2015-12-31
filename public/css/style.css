@@ -2,32 +2,34 @@
     font-family: "mininal";
     src: url('../fonts/Dense-Regular.otf') format('opentype');
 }
+html{
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     background-color: #ffffff;
+    margin-bottom: 60px;
 }
-h1{
+
+div.logo {
+    min-height: 50%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 50vh; /* These two lines are counted as one :-)       */
+    display: flex;
+    align-items: center;
     text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.35em;
-    font: 88px "mininal";
-    background: #fff;
+    align-content: center;
 }
-h1:after {
-    content: "";
-    display: block;
-    width: 4em;
-    height: 0.0035em;
-    margin: 0.3em auto 0.35em auto;
-    background: #000000;
-}
+
 ul {
     text-align: center;
 }
+
 ul li {
     display: inline;
     padding: 20px;
 }
+
 #email{
     border: solid 1px #40444D;
     font-size: 10px;
@@ -75,8 +77,8 @@ input {
 li.ui {
     position: relative;
     vertical-align: middle;
-    padding-right: 70px;
-    margin-right: 5px;
+    padding-right: 30px;
+    margin-right: 0px;
     display: inline;
 }
 
@@ -85,25 +87,58 @@ li.ui.icon-only > .icon {
 }
 
 li.ui .facebook {
-    background-image: url("../assets/social-006_facebook.png");
+    background-image: url("../assets/Circle/Facebook%20Solid.svg");
+    width: 32px;
+    height: 32px;
+}
+
+li.ui .facebook:hover {
+    background-image: url("../assets/Circle/Facebook%20Solid%20Background.svg");
     width: 32px;
     height: 32px;
 }
 
 li.ui .twitter {
-    background-image: url("../assets/social-003_twitter.png");
+    background-image: url("../assets/Circle/Twitter%20Solid.svg");
+    width: 32px;
+    height: 32px;
+}
+
+li.ui .twitter:hover {
+    background-image: url("../assets/Circle/Twitter%20Solid%20Background.svg");
     width: 32px;
     height: 32px;
 }
 
 li.ui .instagram {
-    background-image: url("../assets/social-038_instagram.png");
+    background-image: url("../assets/Circle/Instagram%20Solid.svg");
+    width: 32px;
+    height: 32px;
+}
+
+li.ui .instagram:hover {
+    background-image: url("../assets/Circle/Instagram%20Solid%20Background.svg");
     width: 32px;
     height: 32px;
 }
 
 li.ui .soundcloud {
-    background-image: url("../assets/social-034_soundcloud.png");
+    background-image: url("../assets/Circle/Soundcloud%20Solid.svg");
     width: 32px;
     height: 32px;
+}
+
+li.ui .soundcloud:hover {
+    background-image: url("../assets/Circle/Soundcloud%20Solid%20Background.svg");
+    width: 32px;
+    height: 32px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    margin-left: -50px;
 }

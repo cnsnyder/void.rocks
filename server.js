@@ -36,8 +36,13 @@ app.post('/subscribe', function (req, res) {
   console.log("Processing request with body: %s", JSON.stringify(req.body));
   // send to mailchimp
   console.log(keys);
-  mailchimp.listSubscribe(req.body.email_address, keys.mailchimp.key, keys.mailchimp.listId)
-  res.json({email: req.body.email}); // send result
+  response_data = mailchimp.listSubscribe(req.body.email_address,
+                                          keys.mailchimp.key,
+                                          keys.mailchimp.listId,
+                                          function (response_data){
+                                            console.log('SERVER response_data: %s', response_data);
+                                            res.json(response_data);
+                                          });
 })
 
 var server = app.listen(80, function() {

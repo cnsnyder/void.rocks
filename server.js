@@ -12,7 +12,6 @@ try {
 catch(err) {
   console.log(err);
 }
-
 if (keys === undefined && debug !== undefined) {
   try {
     keys = JSON.parse(fs.readFileSync('.keys.json', 'utf8'))
@@ -36,7 +35,8 @@ app.use('/', express.static('public/index.html'))
 app.post('/subscribe', function (req, res) {
   console.log("Processing request with body: %s", JSON.stringify(req.body));
   // send to mailchimp
-  mailchimp.listSubscribe(req.body.email_address)
+  console.log(keys);
+  mailchimp.listSubscribe(req.body.email_address, keys.mailchimp.key, keys.mailchimp.listId)
   res.json({email: req.body.email}); // send result
 })
 

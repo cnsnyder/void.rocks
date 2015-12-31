@@ -1,6 +1,6 @@
 var http = require('http');
 
-exports.listSubscribe = function(email) {
+exports.listSubscribe = function(email, key, listId) {
   var post_data = JSON.stringify({email_address:email,
                                   status:"pending"});
   console.log(post_data);

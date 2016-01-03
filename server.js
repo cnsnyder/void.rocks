@@ -36,13 +36,17 @@ app.post('/subscribe', function (req, res) {
   console.log("Processing request with body: %s", JSON.stringify(req.body));
   // send to mailchimp
   console.log(keys);
-  response_data = mailchimp.listSubscribe(req.body.email_address,
-                                          keys.mailchimp.key,
-                                          keys.mailchimp.listId,
-                                          function (response_data){
-                                            console.log('SERVER response_data: %s', response_data);
-                                            res.send(response_data);
-                                          });
+  mailchimp.listSubscribe(req.body.email_address,
+                          keys.mailchimp.key,
+                          keys.mailchimp.listId,
+                          function (response_data, headers, status){
+                            console.log('SERVER response_data: %s', response_data);
+                            if (status == '200'){
+                              res.json({success: true, displayMessage: "Successfully Subscribed!"});
+                            } else if (status == '400'){
+                              res.json({"success": false, displayMessage: "This email is already subscribed"})
+                            }
+                          });
 })
 
 var server = app.listen(80, function() {

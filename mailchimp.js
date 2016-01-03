@@ -1,6 +1,8 @@
 var http = require('http');
 
 exports.listSubscribe = function(email, key, listId, callback) {
+  var status = "";
+  var headers = "";
   var response_data = "";
   var post_data = JSON.stringify({email_address:email,
                                   status:"pending"});
@@ -17,9 +19,10 @@ exports.listSubscribe = function(email, key, listId, callback) {
       }
   };
   var req = http.request(post_options, function(res) {
-
-    console.log('STATUS: ' + res.statusCode);
-    console.log('HEADERS: ' + JSON.stringify(res.headers));
+    status = res.statusCode;
+    headers = JSON.stringify(res.headers)
+    console.log('STATUS: ' + status);
+    console.log('HEADERS: ' + headers);
     res.setEncoding('utf8');
     res.on('data', function (chunk) {
       response_data += chunk;
@@ -27,7 +30,7 @@ exports.listSubscribe = function(email, key, listId, callback) {
     });
     res.on('end', function() {
       console.log('No more data in response.');
-      callback(response_data);
+      callback(response_data, headers, status);
     });
   });
   req.on('error', function(e) {

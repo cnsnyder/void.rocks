@@ -7,6 +7,9 @@ angular.module('MTApp', [])
   if ($scope.email === undefined) {
     $scope.email = '';
   }
+  if ($scope.result === undefined) {
+    $scope.result = '';
+  }
   $scope.change = function() {
     console.log('CHANGE');
     if ($scope.email == '') {
@@ -25,24 +28,27 @@ angular.module('MTApp', [])
 
   function subscribe(){
     console.log('TEST');
-    if (!verifyEmail()){
+    if (!verifyEmail($scope)){
+      console.log('NOPE!!');
       return;
     }
     $http.post('http://void.rocks/subscribe',
      angular.toJson({email_address: $scope.email}))
      .then(function (result) {
-        $scope.result = angular.fromJson(result.data);
+        $scope.result = angular.fromJson(result.data).displayMessage;
         console.log($scope.result);
       }, function (result) {
         $scope.result = "ERROR!!!";
       });
     };
-    function verifyEmail(){
+    function verifyEmail($scope){
       var is_valid = false;
       var emailRegEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
       if ($scope.email.search(emailRegEx) == -1 && $scope.email != '') {
+        console.log('INVALID EMAIL');
           document.getElementById("email").style.border = "solid 1px #D7244C";
           document.getElementById("email").style.color = "#D7244C";
+          $scope.result = "Please enter a vaild email address";
       }
       else {
         document.getElementById("email").style.border = "solid 1px #40444D";

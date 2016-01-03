@@ -16,6 +16,7 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="css/style.css" media="screen">
     <link href="sticky-footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -27,20 +28,37 @@
 
   </head>
   <body>
-
+<div class="container center-block">
+  <div class="row center-block">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-10 center-block vertical-align">
 <!--  <h1><span><strong>Myles </strong> Travitz</span></h1>-->
-  <div class="logo">
-    <div class="row vertical-align"><img src="assets/Myles%20Travitz%20Logo%20Icon.svg" style="width: 27%"></div>
-  </div>
-
-  <div id="subscription">
-    <form name ="myform">
-    <input type="text" id="email" ng-model="email" ng-change="change()" onclick="select()" placeholder="ENTER EMAIL">
-    <!--<input type="submit" class="btn btn-lg btn-default" onclick="submit()" id="btn-style" value="SUBMIT">-->
-      <button id="btn-style" ng-click="submit()">SUBMIT</button>
-    </form>
-    <h1> {{result}} </h1>
-  </div>
+    <img id="logo_image" class="center-block" src="assets/Myles%20Travitz%20Logo%20Icon.svg">
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8 center-block">
+        <div id="subscription" class="form-group">
+          <form name ="myform" class="form-inline">
+          <input type="text"
+                 class=""
+                 id="email"
+                 ng-model="email"
+                 ng-change="change()"
+                 onclick="select()"
+                 placeholder="ENTER EMAIL">
+          <!--<input type="submit" class="btn btn-lg btn-default" onclick="submit()" id="btn-style" value="SUBMIT">-->
+            <button id="btn-style" class="" ng-click="submit()">SUBMIT</button>
+            <p class="help-block animated tada">test</p>
+            <div class="alert alert-danger"> {{result}} </div>
+          </form>
+      </div>
+      <div class="col-xs-2"></div>
+      </div>
+    </div>
+    <div class="col-xs-1"></div>
+    </div>
+ </div>
+ </div>
 
   <footer class="footer">
     <div class="container">

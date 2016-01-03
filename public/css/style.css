@@ -97,62 +97,49 @@ input {
 
 li.ui {
     position: relative;
-    vertical-align: middle;
-    padding-right: 30px;
-    margin-right: 0px;
-    display: inline;
+    /*vertical-align: middle; */
+    /*padding-right: 30px;*/
+    /*margin-right: 0px;*/
+    display: inline-block;
 }
 
 li.ui.icon-only > .icon {
     position: absolute;
+    margin-left: -40px;
+    width: 32px;
+    height: 32px;
 }
 
 li.ui .facebook {
     background-image: url("../assets/Circle/Facebook%20Solid.svg");
-    width: 32px;
-    height: 32px;
 }
 
 li.ui .facebook:hover {
     background-image: url("../assets/Circle/Facebook%20Solid%20Background.svg");
-    width: 32px;
-    height: 32px;
 }
 
 li.ui .twitter {
     background-image: url("../assets/Circle/Twitter%20Solid.svg");
-    width: 32px;
-    height: 32px;
 }
 
 li.ui .twitter:hover {
     background-image: url("../assets/Circle/Twitter%20Solid%20Background.svg");
-    width: 32px;
-    height: 32px;
 }
 
 li.ui .instagram {
     background-image: url("../assets/Circle/Instagram%20Solid.svg");
-    width: 32px;
-    height: 32px;
 }
 
 li.ui .instagram:hover {
     background-image: url("../assets/Circle/Instagram%20Solid%20Background.svg");
-    width: 32px;
-    height: 32px;
 }
 
 li.ui .soundcloud {
     background-image: url("../assets/Circle/Soundcloud%20Solid.svg");
-    width: 32px;
-    height: 32px;
 }
 
 li.ui .soundcloud:hover {
     background-image: url("../assets/Circle/Soundcloud%20Solid%20Background.svg");
-    width: 32px;
-    height: 32px;
 }
 
 .footer {
@@ -161,5 +148,5 @@ li.ui .soundcloud:hover {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 60px;
-    margin-left: -50px;
+    /*margin-left: -109px;*/
 }

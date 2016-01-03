@@ -49,8 +49,8 @@
                  placeholder="ENTER EMAIL">
           <!--<input type="submit" class="btn btn-lg btn-default" onclick="submit()" id="btn-style" value="SUBMIT">-->
             <button id="btn-style" class="form-control" ng-click="submit()">SUBMIT</button>
-            <p id="result_label" ng-if="(displayResult && !success)" class="help-block fade" style="color: #CC0000;">{{result}}</p>
-            <p id="result_label" ng-if="(displayResult && success)" class="help-block fade" style="color: #00CC00;">{{result}}</p>
+            <p id="result_label" ng-if="((displayResult && !success) || invalid_email)" class="help-block fade" style="color: #B71E1E;">{{result}}</p>
+            <p id="result_label" ng-if="(displayResult && success)" class="help-block fade" style="color: #1EB729;">{{result}}</p>
           </form>
       </div>
       <div class="col-xs-2"></div>

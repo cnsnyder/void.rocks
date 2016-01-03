@@ -4,7 +4,10 @@ angular.module('MTApp', ["ngAnimate"])
 .controller('SubscribeController', function($scope, $http) {
   var pendingTask;
   var result_label = angular.element(document.querySelector("#result_label"));
+  var lastSentEmail = '';
+
   $scope.displayResult = false;
+  $scope.invalid_email = false;
   if ($scope.email === undefined) {
     $scope.email = '';
   }
@@ -12,8 +15,8 @@ angular.module('MTApp', ["ngAnimate"])
     $scope.result = '';
   }
   $scope.change = function() {
-    console.log('CHANGE');
     $scope.displayResult = false;
+    $scope.invalid_email = false;
     if ($scope.email == '') {
         document.getElementById("email").style.border = "solid 1px #40444D";
         document.getElementById("email").style.color = "#40444D";
@@ -31,8 +34,14 @@ angular.module('MTApp', ["ngAnimate"])
   function subscribe(){
     console.log('TEST');
     if (!verifyEmail($scope)){
-      console.log('NOPE!!');
-      // do something with the result label
+      $scope.$apply(function(){
+        $scope.invalid_email = true;
+      })
+      console.log($scope.invalid_email);
+      console.log($scope);
+      return;
+    }
+    if ($scope.email == lastSentEmail){
       return;
     }
     $http.post('http://void.rocks/subscribe',
@@ -42,8 +51,7 @@ angular.module('MTApp', ["ngAnimate"])
         $scope.result = result.displayMessage;
         $scope.success = result.success;
         $scope.displayResult = true;
-        console.log($scope.result);
-        console.log($scope.success);
+        lastSentEmail = $scope.email
       }, function (result) {
         $scope.result = "ERROR!!!";
       });

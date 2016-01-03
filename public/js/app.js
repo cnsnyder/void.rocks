@@ -1,9 +1,10 @@
 'use strict';
 
-angular.module('MTApp', [])
+angular.module('MTApp', ["ngAnimate"])
 .controller('SubscribeController', function($scope, $http) {
   var pendingTask;
-
+  var result_label = angular.element(document.querySelector("#result_label"));
+  $scope.displayResult = false;
   if ($scope.email === undefined) {
     $scope.email = '';
   }
@@ -12,6 +13,7 @@ angular.module('MTApp', [])
   }
   $scope.change = function() {
     console.log('CHANGE');
+    $scope.displayResult = false;
     if ($scope.email == '') {
         document.getElementById("email").style.border = "solid 1px #40444D";
         document.getElementById("email").style.color = "#40444D";
@@ -30,13 +32,18 @@ angular.module('MTApp', [])
     console.log('TEST');
     if (!verifyEmail($scope)){
       console.log('NOPE!!');
+      // do something with the result label
       return;
     }
     $http.post('http://void.rocks/subscribe',
      angular.toJson({email_address: $scope.email}))
      .then(function (result) {
-        $scope.result = angular.fromJson(result.data).displayMessage;
+        result = angular.fromJson(result.data);
+        $scope.result = result.displayMessage;
+        $scope.success = result.success;
+        $scope.displayResult = true;
         console.log($scope.result);
+        console.log($scope.success);
       }, function (result) {
         $scope.result = "ERROR!!!";
       });
@@ -50,7 +57,9 @@ angular.module('MTApp', [])
           document.getElementById("email").style.color = "#D7244C";
           $scope.result = "Please enter a vaild email address";
       }
-      else {
+      else if ($scope.email == '') {
+        $scope.result = "Please enter an email address";
+      } else {
         document.getElementById("email").style.border = "solid 1px #40444D";
         document.getElementById("email").style.color = "#40444D";
         is_valid = true;
@@ -60,5 +69,6 @@ angular.module('MTApp', [])
 
   $scope.select = function(){
       this.setSelectionRange(0, this.value.length);
+      console.log("SELECT");
     };
 });

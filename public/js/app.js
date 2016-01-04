@@ -44,7 +44,7 @@ angular.module('MTApp', ["ngAnimate"])
     if ($scope.email == lastSentEmail){
       return;
     }
-    $http.post('http://void.rocks/subscribe',
+    $http.post('http://mylestravitz.com/subscribe',
      angular.toJson({email_address: $scope.email}))
      .then(function (result) {
         result = angular.fromJson(result.data);

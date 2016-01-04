@@ -29,8 +29,8 @@
 
   </head>
   <body class="Site">
-<div class="container center-block">
-    <img id="logo_image" class="center-block" src="assets/Myles%20Travitz%20Logo%20Icon.svg">
+<div class="main_body center-block">
+  <img id="logo_image" class="center-block" src="assets/Myles%20Travitz%20Logo%20Icon.svg">
     <div id="subscription" class="form-group">
       <form name ="myform" class="form-inline">
       <input type="text"
@@ -41,13 +41,15 @@
              onclick="select()"
              placeholder="ENTER EMAIL">
       <!--<input type="submit" class="btn btn-lg btn-default" onclick="submit()" id="btn-style" value="SUBMIT">-->
-        <button id="btn-style" class="form-control" ng-click="submit()">SUBMIT</button>
-        <p id="result_label" ng-if="((displayResult && !success) || invalid_email)" class="help-block fade" style="color: #B71E1E;">{{result}}</p>
-        <p id="result_label" ng-if="(displayResult && success)" class="help-block fade" style="color: #1EB729;">{{result}}</p>
+        <button id="btn-style" class="form-control center-block" ng-click="submit()">SUBMIT</button>
+        <div class="displayMessage">
+          <p id="result_label" ng-if="((displayResult && !success) || invalid_email)" class="help-block fade" style="color: #B71E1E;">{{result}}</p>
+          <p id="result_label" ng-if="(displayResult && success)" class="help-block fade" style="color: #1EB729;">{{result}}</p>
+        </div>
       </form>
     </div>
  </div>
- <div class="footer_container">
+ <div class="icon_container">
   <div class="icon-only">
     <a class="icon soundcloud" target="_blank" href="https://soundcloud.com/myles-travitz"></a>
   </div>

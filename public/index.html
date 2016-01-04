@@ -28,58 +28,41 @@
     <script src="../js/app.js"></script>
 
   </head>
-  <body>
-<div class="container center-block">
-  <div class="row center-block">
-    <div class="col-xs-1"></div>
-    <div class="col-xs-10 center-block vertical-align">
-<!--  <h1><span><strong>Myles </strong> Travitz</span></h1>-->
-    <img id="logo_image" class="center-block" src="assets/Myles%20Travitz%20Logo%20Icon.svg">
-    <div class="row">
-      <div class="col-xs-2"></div>
-      <div class="col-xs-8 center-block">
-        <div id="subscription" class="form-group">
-          <form name ="myform" class="form-inline">
-          <input type="text"
-                 class="form-control"
-                 id="email"
-                 ng-model="email"
-                 ng-change="change()"
-                 onclick="select()"
-                 placeholder="ENTER EMAIL">
-          <!--<input type="submit" class="btn btn-lg btn-default" onclick="submit()" id="btn-style" value="SUBMIT">-->
-            <button id="btn-style" class="form-control" ng-click="submit()">SUBMIT</button>
-            <p id="result_label" ng-if="((displayResult && !success) || invalid_email)" class="help-block fade" style="color: #B71E1E;">{{result}}</p>
-            <p id="result_label" ng-if="(displayResult && success)" class="help-block fade" style="color: #1EB729;">{{result}}</p>
-          </form>
-      </div>
-      <div class="col-xs-2"></div>
-      </div>
-    </div>
-    <div class="col-xs-1"></div>
+  <body class="Site">
+<div class="main_body center-block">
+  <img id="logo_image" class="center-block" src="assets/Myles%20Travitz%20Logo%20Icon.svg">
+    <div id="subscription" class="form-group">
+      <form name ="myform" class="form-inline">
+      <input type="text"
+             class="form-control"
+             id="email"
+             ng-model="email"
+             ng-change="change()"
+             onclick="select()"
+             placeholder="ENTER EMAIL">
+      <!--<input type="submit" class="btn btn-lg btn-default" onclick="submit()" id="btn-style" value="SUBMIT">-->
+        <button id="btn-style" class="form-control center-block" ng-click="submit()">SUBMIT</button>
+        <div class="displayMessage">
+          <p id="result_label" ng-if="((displayResult && !success) || invalid_email)" class="help-block fade" style="color: #B71E1E;">{{result}}</p>
+          <p id="result_label" ng-if="(displayResult && success)" class="help-block fade" style="color: #1EB729;">{{result}}</p>
+        </div>
+      </form>
     </div>
  </div>
+ <div class="icon_container">
+  <div class="icon-only">
+    <a class="icon soundcloud" target="_blank" href="https://soundcloud.com/myles-travitz"></a>
+  </div>
+  <div class="icon-only">
+    <a class="icon facebook" id="facebook" target="_blank" href="https://www.facebook.com/mylestravitz"></a>
+  </div>
+  <div class="icon-only">
+    <a class="icon twitter" target="_blank" href="https://twitter.com/MylesTravitz"></a>
+  </div>
+  <div class="icon-only">
+    <a class="icon instagram" target="_blank" href="https://www.instagram.com/mylestravitz"></a>
+  </div>
  </div>
-
-  <footer class="footer">
-    <div class="container">
-        <ul>
-        <li class="ui transparent icon-only">
-          <a class="icon soundcloud" target="_blank" href="https://soundcloud.com/myles-travitz"></a>
-        </li>
-        <li class="ui transparent icon-only">
-          <a class="icon facebook" id="facebook" target="_blank" href="https://www.facebook.com/mylestravitz"></a>
-        </li>
-        <li class="ui transparent icon-only">
-          <a class="icon twitter" target="_blank" href="https://twitter.com/MylesTravitz"></a>
-        </li>
-        <li class="ui transparent icon-only">
-          <a class="icon instagram" target="_blank" href="https://www.instagram.com/mylestravitz"></a>
-        </li>
-      </ul>
-    </div>
-
-  </footer>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

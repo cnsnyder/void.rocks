@@ -13,6 +13,8 @@ body {
 }
 
 div.logo {
+    height: 50%;
+    width: 100%;
     min-height: 50%;  /* Fallback for browsers do NOT support vh unit */
     min-height: 50vh; /* These two lines are counted as one :-)       */
     max-height: 50%;
@@ -20,42 +22,37 @@ div.logo {
     max-width: 50%;
     min-width: 50%;
     display: flex;
+    justify-content: center;
     align-items: center;
     text-align: center;
     align-content: center;
 }
-#center_logo {
-  min-height: 50%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 50vh; /* These two lines are counted as one :-)       */
-  max-height: 50%;
-  max-height: 50vh;
-  max-width: 50%;
-  min-width: 50%;
-}
 #logo_image {
-  min-height: 50%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 50vh; /* These two lines are counted as one :-)       */
-  max-height: 60%;
+  margin-top: 50px;
+  min-height: 10%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 10vh; /* These two lines are counted as one :-)       */
+  max-height: 40%;
   max-height: 50vh;
-  max-width: 60%;
-  min-width: 50%;
+  max-width: 40%;
+  min-width: 10%;
 }
 
-ul {
-    text-align: center;
+.main_body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
-
-ul li {
-    display: inline;
-    padding: 20px;
-}
-
 #email{
     border: solid 1px #40444D;
     font-size: 10px;
+    margin-top: 5px;
     text-transform: uppercase;
     color: #40444D;
     padding: 3px 5px;
+    max-width: 200px;
     height: 25px;
     background-color: transparent;
     outline: none;
@@ -63,16 +60,26 @@ ul li {
 #btn-style{
     border: solid 1px #212121;
     font-size: 10px;
+    margin-top: 5px;
     letter-spacing: 1px;
     color: #212121;
-
+    max-width: 70px;
     height: 25px;
     background-color: transparent;
     outline: none;
 }
 
 #subscription {
+    margin-top: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#result_label {
+  margin: 0px;
 }
 
 input {
@@ -95,50 +102,58 @@ input {
     text-align: center;
 }
 
-li.ui {
-    position: relative;
-    /*vertical-align: middle; */
-    /*padding-right: 30px;*/
-    /*margin-right: 0px;*/
-    display: inline-block;
+.icon_container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
 
-li.ui.icon-only > .icon {
-    position: absolute;
-    margin-left: -40px;
+div.displayMessage {
+  height: 32px;
+  margin: 0px;
+}
+div.icon-only {
+  width: 40px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.icon {
     width: 32px;
     height: 32px;
 }
 
-li.ui .facebook {
+.facebook {
     background-image: url("../assets/Circle/Facebook%20Solid.svg");
 }
 
-li.ui .facebook:hover {
+.facebook:hover {
     background-image: url("../assets/Circle/Facebook%20Solid%20Background.svg");
 }
 
-li.ui .twitter {
+.twitter {
     background-image: url("../assets/Circle/Twitter%20Solid.svg");
 }
 
-li.ui .twitter:hover {
+.twitter:hover {
     background-image: url("../assets/Circle/Twitter%20Solid%20Background.svg");
 }
 
-li.ui .instagram {
+.instagram {
     background-image: url("../assets/Circle/Instagram%20Solid.svg");
 }
 
-li.ui .instagram:hover {
+.instagram:hover {
     background-image: url("../assets/Circle/Instagram%20Solid%20Background.svg");
 }
 
-li.ui .soundcloud {
+.soundcloud {
     background-image: url("../assets/Circle/Soundcloud%20Solid.svg");
 }
 
-li.ui .soundcloud:hover {
+.soundcloud:hover {
     background-image: url("../assets/Circle/Soundcloud%20Solid%20Background.svg");
 }
 
@@ -146,7 +161,11 @@ li.ui .soundcloud:hover {
     position: absolute;
     bottom: 0;
     width: 100%;
+    display: block;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
     /* Set the fixed height of the footer here */
-    height: 60px;
-    /*margin-left: -109px;*/
+    min-height: 10%;
+    height: 20%;
 }

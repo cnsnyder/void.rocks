@@ -25,7 +25,7 @@ if (keys === undefined && debug !== undefined) {
 var app = express();
 
 app.set('views', __dirname + "/views");
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -45,9 +45,9 @@ app.post('/subscribe', function (req, res) {
                           function (response_data, headers, status){
                             console.log('SERVER response_data: %s', response_data);
                             if (status == '200'){
-                              res.json({success: true, displayMessage: "Successfully Subscribed!"});
+                              res.json({success: true, displayMessage: "Successfully subscribed!"});
                             } else if (status == '400'){
-                              res.json({"success": false, displayMessage: "This email is already subscribed"})
+                              res.json({"success": false, displayMessage: "This email is already subscribed."})
                             }
                           });
 });

@@ -24,6 +24,9 @@ if (keys === undefined && debug !== undefined) {
 // Set up express
 var app = express();
 
+app.set('views', __dirname + "/views");
+app.set('view engine', 'jade');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
@@ -47,7 +50,13 @@ app.post('/subscribe', function (req, res) {
                               res.json({"success": false, displayMessage: "This email is already subscribed"})
                             }
                           });
-})
+});
+app.use(function(req, res, next) {
+  res.status(404);
+  if (req.accepts('html')) {
+      res.render('404', {url: req.url });
+  }
+});
 
 var server = app.listen(80, function() {
   var host = server.address().address;

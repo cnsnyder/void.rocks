@@ -26,7 +26,7 @@ if (keys === undefined && debug !== undefined) {
 // Set up express
 var app = express();
 
-app.use(favicon(path.join(__dirname, 'public', 'assets', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'assets', 'favicon.png')));
 app.set('views', __dirname + "/views");
 app.set('view engine', 'ejs');
 

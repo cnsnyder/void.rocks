@@ -12,8 +12,18 @@ body {
     margin-bottom: 60px;
 }
 
+.Site {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
 div.logo {
-    height: 50%;
+    height: 100%;
     width: 100%;
     min-height: 50%;  /* Fallback for browsers do NOT support vh unit */
     min-height: 50vh; /* These two lines are counted as one :-)       */
@@ -71,7 +81,7 @@ div.logo {
 }
 
 #subscription {
-    margin-top: 20px;
+    margin-top: 5vh;
     text-align: center;
     display: flex;
     flex-direction: row;

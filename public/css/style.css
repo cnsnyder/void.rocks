@@ -79,6 +79,10 @@ font-size: 2.7vmax;
     outline: none;
 }
 
+#btn-style:hover {
+    background-color: #EEEEEE;
+}
+
 #subscription {
     margin-top: 1vh;
     text-align: center;

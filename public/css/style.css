@@ -2,14 +2,11 @@
     font-family: "mininal";
     src: url('../fonts/Dense-Regular.otf') format('opentype');
 }
-html{
-    position: relative;
-    min-height: 100%;
-}
+
 
 body {
     background-color: #ffffff;
-    margin-bottom: 60px;
+
 }
 
 .Site {
@@ -23,15 +20,30 @@ body {
   margin-right: auto;
 }
 #logo_image {
-  margin-top: 25vh;
   min-height: 10%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 10vh; /* These two lines are counted as one :-)       */
-  min-width: 20vh;
-  max-width: 60vh;
+  min-height: 5vh; /* These two lines are counted as one :-)       */
+  min-width: 250px;
+  max-width: 33vw;
   width: 100%;
-  height: auto;
+}
+@media (min-width: 300px){
+
+  .text-announcement {
+  margin-top: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  font-size: 15px;
+  }
 }
 
+.text-announcement {
+margin-top: 10px;
+font-weight: bold;
+text-transform: uppercase;
+font-variant: small-caps;
+font-size: 2.7vmax;
+}
 .main_body {
   position: relative;
   display: flex;
@@ -39,16 +51,18 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100%;
 }
 #email{
     border: solid 1px #40444D;
+    width: 300px;
+    max-width: 30vw;
+    min-width: 20vw;
     font-size: 10px;
     margin-top: 5px;
     text-transform: uppercase;
     color: #40444D;
     padding: 3px 5px;
-    width: 300px;
-    max-width: 300px;
     height: 25px;
     background-color: transparent;
     outline: none;
@@ -105,6 +119,7 @@ input {
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  margin-bottom: 2vh;
 }
 
 div.displayMessage {

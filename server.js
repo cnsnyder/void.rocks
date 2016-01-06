@@ -49,7 +49,7 @@ app.post('/subscribe', function (req, res) {
                           function (response_data, headers, status){
                             console.log('SERVER response_data: %s', response_data);
                             if (status == '200'){
-                              res.json({success: true, displayMessage: "Successfully subscribed!"});
+                              res.json({success: true, displayMessage: "Check email to confirm."});
                             } else if (status == '400'){
                               res.json({"success": false, displayMessage: "This email is already subscribed."})
                             }

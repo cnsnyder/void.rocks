@@ -65,6 +65,10 @@ body {
     outline: none;
 }
 
+#btn-style:hover {
+    background-color: #EEEEEE;
+}
+
 #subscription {
     margin-top: 1vh;
     text-align: center;

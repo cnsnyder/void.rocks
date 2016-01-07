@@ -191,9 +191,15 @@ div.icon-only {
     align-items: center;
     text-align: center;
     /* Set the fixed height of the footer here */
+    /*
     min-height: 10%;
-    height: 7%;
+    height: 20%;
+    */
+    min-height: 3vh;
+    height: 3vh;
 }
 #privatepolicy {
-
+    text-decoration: none;
+    font-size: x-small;
+    color: #212121;
 }

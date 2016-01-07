@@ -19,9 +19,11 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+
 #logo_image {
-  min-height: 10%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 5vh; /* These two lines are counted as one :-)       */
+  min-height: 10%;
+  min-height: 5vh;
   min-width: 250px;
   max-width: 33vw;
   width: 100%;

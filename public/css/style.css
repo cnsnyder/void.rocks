@@ -184,21 +184,21 @@ div.icon-only {
 .footer {
     position: absolute;
     bottom: 0;
-    width: 100%;
-    display: block;
-    justify-content: center;
+    margin-left: 1%;
+    /*width: 100%;
+    display: flex;
+     justify-content: center;
     flex-direction: row;
     align-items: center;
-    text-align: center;
-    /* Set the fixed height of the footer here */
+    Set the fixed height of the footer here */
     /*
     min-height: 10%;
     height: 20%;
     */
-    min-height: 3vh;
-    height: 3vh;
+    min-height: 5%;
+    height: 5%;
 }
-#privatepolicy {
+#privacypolicy {
     text-decoration: none;
     font-size: x-small;
     color: #212121;

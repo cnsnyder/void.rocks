@@ -19,22 +19,12 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-#logo_image {
-  min-height: 10%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 5vh; /* These two lines are counted as one :-)       */
-  min-width: 250px;
-  max-width: 33vw;
-  width: 100%;
-}
-@media (min-width: 300px){
 
-  .text-announcement {
-  margin-top: 10px;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-variant: small-caps;
-  font-size: 15px;
-  }
+
+#logo_image {
+  min-width: 250px;
+  max-width: 27vw;
+  width: 100%;
 }
 
 .text-announcement {
@@ -44,6 +34,7 @@ text-transform: uppercase;
 font-variant: small-caps;
 font-size: 2.7vmax;
 }
+
 .main_body {
   position: relative;
   display: flex;
@@ -67,6 +58,10 @@ font-size: 2.7vmax;
     background-color: transparent;
     outline: none;
 }
+
+
+
+
 #btn-style{
     border: solid 1px #212121;
     font-size: 10px;

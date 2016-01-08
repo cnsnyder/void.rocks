@@ -2,6 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require("fs");
 var mailchimp = require("./mailchimp.js");
+var path = require('path');
+var favicon = require('serve-favicon');
 const debug = process.env.MTAPP_DEBUG;
 
 // Try to load the keys
@@ -24,6 +26,7 @@ if (keys === undefined && debug !== undefined) {
 // Set up express
 var app = express();
 
+app.use(favicon(path.join(__dirname, 'public', 'assets', 'favicon.png')));
 app.set('views', __dirname + "/views");
 app.set('view engine', 'ejs');
 
@@ -31,8 +34,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
+
 // Routes
-app.use('/', express.static('public/index.html'))
+app.use('/', express.static('public/index.html'));
+app.use('/privacy_policy', express.static('public/static/privacy_policy.html'));
 
 // Forward the submission to mailchimp after adding our api key
 app.post('/subscribe', function (req, res) {
@@ -45,7 +50,7 @@ app.post('/subscribe', function (req, res) {
                           function (response_data, headers, status){
                             console.log('SERVER response_data: %s', response_data);
                             if (status == '200'){
-                              res.json({success: true, displayMessage: "Successfully subscribed!"});
+                              res.json({success: true, displayMessage: "Check email to confirm."});
                             } else if (status == '400'){
                               res.json({"success": false, displayMessage: "This email is already subscribed."})
                             }

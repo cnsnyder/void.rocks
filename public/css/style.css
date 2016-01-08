@@ -173,8 +173,9 @@ div.icon-only {
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: 0%;
+    float:left;
     margin-left: 1%;
     /*width: 100%;
     display: flex;
@@ -186,8 +187,6 @@ div.icon-only {
     min-height: 10%;
     height: 20%;
     */
-    min-height: 5%;
-    height: 5%;
 }
 #privacypolicy {
     text-decoration: none;

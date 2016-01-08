@@ -1,8 +1,7 @@
 @font-face {
     font-family: "mininal";
-    src: url('../fonts/Dense-Regular.otf') format('opentype');
+    src: url('../fonts/Roboto-Light.ttf') format('truetype');
 }
-
 
 body {
     background-color: #ffffff;

@@ -28,9 +28,6 @@ body {
 
 .text-announcement {
 margin-top: 10px;
-font-weight: bold;
-text-transform: uppercase;
-font-variant: small-caps;
 font-size: 2.7vmax;
 }
 
@@ -176,8 +173,9 @@ div.icon-only {
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: 0%;
+    float:left;
     margin-left: 1%;
     /*width: 100%;
     display: flex;
@@ -189,8 +187,6 @@ div.icon-only {
     min-height: 10%;
     height: 20%;
     */
-    min-height: 5%;
-    height: 5%;
 }
 #privacypolicy {
     text-decoration: none;

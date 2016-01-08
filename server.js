@@ -36,7 +36,8 @@ app.use(express.static('public'));
 
 
 // Routes
-app.use('/', express.static('public/index.html'))
+app.use('/', express.static('public/index.html'));
+app.use('/privacy_policy', express.static('public/static/privacy_policy.html'));
 
 // Forward the submission to mailchimp after adding our api key
 app.post('/subscribe', function (req, res) {

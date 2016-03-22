@@ -23,6 +23,7 @@ body {
 #logo_image {
   min-width: 250px;
   max-width: 27vw;
+  max-height: 27vh;
   width: 100%;
 }
 

@@ -1,0 +1,12 @@
+.fade {
+  opacity: 1.0;
+}
+.fade.ng-enter {
+  animation: fadeIn 1s;
+}
+.fade.ng-enter-active {
+  opacity: 1.0;
+}
+.fade.ng-leave {
+  animation: fadeOut 1s;
+}

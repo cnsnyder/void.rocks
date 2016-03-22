@@ -1,40 +1,36 @@
 @font-face {
     font-family: "mininal";
-    src: url('../fonts/Dense-Regular.otf') format('opentype');
-}
-html{
-    position: relative;
-    min-height: 100%;
+    src: url('../fonts/Roboto-Light.ttf') format('truetype');
 }
 
 body {
     background-color: #ffffff;
-    margin-bottom: 60px;
+
 }
 
-div.logo {
-    height: 50%;
-    width: 100%;
-    min-height: 50%;  /* Fallback for browsers do NOT support vh unit */
-    min-height: 50vh; /* These two lines are counted as one :-)       */
-    max-height: 50%;
-    max-height: 50vh;
-    max-width: 50%;
-    min-width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    align-content: center;
+.Site {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+
 #logo_image {
-  margin-top: 50px;
-  min-height: 10%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 10vh; /* These two lines are counted as one :-)       */
-  max-height: 40%;
-  max-height: 50vh;
-  max-width: 40%;
-  min-width: 10%;
+  min-width: 250px;
+  max-width: 27vw;
+  max-height: 27vh;
+  width: 100%;
+}
+
+.text-announcement {
+margin-top: 4vh;
+font-size: 2.0vmax;
+text-transform: uppercase;
 }
 
 .main_body {
@@ -44,19 +40,26 @@ div.logo {
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100%;
 }
 #email{
     border: solid 1px #40444D;
+    width: 300px;
+    max-width: 30vw;
+    min-width: 20vw;
     font-size: 10px;
     margin-top: 5px;
     text-transform: uppercase;
     color: #40444D;
     padding: 3px 5px;
-    max-width: 200px;
     height: 25px;
     background-color: transparent;
     outline: none;
 }
+
+
+
+
 #btn-style{
     border: solid 1px #212121;
     font-size: 10px;
@@ -69,8 +72,13 @@ div.logo {
     outline: none;
 }
 
+#btn-style:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
 #subscription {
-    margin-top: 20px;
+    margin-top: 1vh;
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -103,11 +111,13 @@ input {
 }
 
 .icon_container {
+  margin-top: 1vh;
   position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  margin-bottom: 2vh;
 }
 
 div.displayMessage {
@@ -156,16 +166,32 @@ div.icon-only {
 .soundcloud:hover {
     background-image: url("../assets/Circle/Soundcloud%20Solid%20Background.svg");
 }
+.mailto {
+    background-image: url("../assets/Circle/Email%20Solid.svg");
+}
+
+.mailto:hover {
+    background-image: url("../assets/Circle/Email%20Solid%20Background.svg");
+}
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    display: block;
-    justify-content: center;
+    position: fixed;
+    bottom: 0%;
+    float:left;
+    margin-left: 1%;
+    /*width: 100%;
+    display: flex;
+     justify-content: center;
     flex-direction: row;
     align-items: center;
-    /* Set the fixed height of the footer here */
+    Set the fixed height of the footer here */
+    /*
     min-height: 10%;
     height: 20%;
+    */
+}
+#privacypolicy {
+    text-decoration: none;
+    font-size: x-small;
+    color: #212121;
 }

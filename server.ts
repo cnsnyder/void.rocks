@@ -1,13 +1,11 @@
-/// <reference path="./typings/express/express.d.ts"/>
-/// <reference path="./typings/body-parser/body-parser.d.ts"/>
-/// <reference path="./typings/serve-favicon/serve-favicon.d.ts"/>
+/// <reference path="./typings/main.d.ts" />
 import express = require('express');
 import bodyParser = require('body-parser');
 import fs = require("fs");
+import path = require('path');
 // TODO: Convert to ts
 import * as mailchimp from './mailchimp.ts';
 import * as test from './test.ts';
-import path = require('path');
 import favicon = require('serve-favicon');
 const debug = process.env.MTAPP_DEBUG;
 

@@ -65,7 +65,9 @@ img {
     align-self: flex-end;
     padding: 5px;
 }
-
+input {
+  text-align: center;
+}
 ul{
   display: inline-flex;
   list-style: none;

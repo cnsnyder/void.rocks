@@ -1,0 +1,47 @@
+doctype html
+html(lang='en', ng-app='MTApp', ng-controller='SubscribeController')
+   head
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+      meta(name='description', content='')
+      meta(name='author', content='')
+      title Myles Travitz
+      // Bootstrap core CSS
+      link(href='../css/bootstrap.min.css', rel='stylesheet')
+      link(rel='stylesheet', href='css/style.css', media='screen')
+      link(href='sticky-footer.css', rel='stylesheet')
+      link(rel='stylesheet', href='css/animate.css')
+      link(rel='stylesheet', href='css/animations.css')
+      // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+      //if lt IE 9
+         script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+         script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+      script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js')
+      script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js')
+      script(src='../js/app.js')
+   body(class="body")
+      div(class="wrapper")
+         top
+         main
+            div(class="main")
+               img(src="assets/logo.png")
+         div(class="exsert")
+            p.text-announcement More to come. Stay informed.   
+            div(id="subscription" class="form-group")
+                     form(class="form-inline" name='myform')
+                        input#email.form-control(type='text', ng-model='email', ng-change='change()', onclick='select()', placeholder='ENTER EMAIL')
+                        button#btn-style.form-control.center-block(ng-click='submit()') SUBMIT         
+                        div(class="displayMessage")
+                           p#result_label.help-block.fade(ng-if='((displayResult && !success) || invalid_email)', style='color: #B71E1E;') {{result}}
+                           |           
+                           p#result_label.help-block.fade(ng-if='(displayResult && success)', style='color: #1EB729;') {{result}}
+         bottom
+            ul
+               a.icon.soundcloud(target='_blank', href='https://soundcloud.com/myles-travitz')
+               a.facebook.icon.facebook(target='_blank', href='https://www.facebook.com/mylestravitz')
+               a.icon.twitter(target='_blank', href='https://twitter.com/MylesTravitz')
+               a.icon.instagram(target='_blank', href='https://www.instagram.com/mylestravitz')
+               a.icon.mailto(href='mailto:management@mylestravitz.com')
+            a(id="privacypolicy" href="/privacy_policy") PRIVACY POLICY

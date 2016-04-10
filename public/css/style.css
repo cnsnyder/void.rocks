@@ -5,93 +5,13 @@
 
 body {
     background-color: #ffffff;
-
-}
-
-.Site {
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-#logo_image {
-  min-width: 250px;
-  max-width: 27vw;
-  max-height: 27vh;
-  width: 100%;
-}
-
-.text-announcement {
-margin-top: 4vh;
-font-size: 2.0vmax;
-text-transform: uppercase;
-}
-
-.main_body {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-#email{
-    border: solid 1px #40444D;
-    width: 300px;
-    max-width: 30vw;
-    min-width: 20vw;
-    font-size: 10px;
-    margin-top: 5px;
+    overflow-x: hidden;
+    height: 100%;
+    font-size: 3rem;
     text-transform: uppercase;
-    color: #40444D;
-    padding: 3px 5px;
-    height: 25px;
-    background-color: transparent;
-    outline: none;
 }
-
-
-
-
-#btn-style{
-    border: solid 1px #212121;
-    font-size: 10px;
-    margin-top: 5px;
-    letter-spacing: 1px;
-    color: #212121;
-    max-width: 70px;
-    height: 25px;
-    background-color: transparent;
-    outline: none;
-}
-
-#btn-style:hover {
-    background-color: #000000;
-    color: #FFFFFF;
-}
-
-#subscription {
-    margin-top: 1vh;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
 #result_label {
-  margin: 0px;
-}
-
-input {
-    text-align: center;
+  font-size: 1.4rem;
 }
 /* for chrome*/
 ::-webkit-input-placeholder{
@@ -110,37 +30,103 @@ input {
     text-align: center;
 }
 
-.icon_container {
-  margin-top: 1vh;
-  position: relative;
+top,bottom {
+  height: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 2vh;
 }
 
-div.displayMessage {
-  height: 32px;
-  margin: 0px;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
 }
-div.icon-only {
-  width: 40px;
-  height: auto;
+.excerpt {
+  text-align: center;
+  height: 100rem;
+}
+
+main, .main {
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+img {
+  width: auto;
+  height: 20rem;
+  display: flex;
+}
+#privacypolicy {
+    text-decoration: none;
+    font-size: x-small;
+    color: #212121;
+    align-self: flex-end;
+    padding: 5px;
+}
+input {
+  text-align: center;
+}
+ul{
+  display: inline-flex;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-left: 90px;
+}
+
+ul a {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+#subscription {
   display: flex;
   justify-content: center;
+
 }
-.icon {
-    width: 32px;
-    height: 32px;
+#btn-style{
+    border: solid 1px #212121;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #212121;
+    max-width: 70px;
+    height: 28px;
+    background-color: transparent;
+    outline: none;
+}
+
+.text-announcement {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+#btn-style:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+#email {
+  width: 30rem;
+  height: 28px;
+  font-size: 10px;
+  text-transform: uppercase;
+  border: solid 1px #40444D;
 }
 
 .facebook {
-    background-image: url("../assets/Circle/Facebook%20Solid.svg");
+    background-image: url("/assets/Circle/Facebook%20Solid.svg");
 }
 
 .facebook:hover {
-    background-image: url("../assets/Circle/Facebook%20Solid%20Background.svg");
+    background-image: url("/assets/Circle/Facebook%20Solid%20Background.svg");
 }
 
 .twitter {
@@ -172,26 +158,4 @@ div.icon-only {
 
 .mailto:hover {
     background-image: url("../assets/Circle/Email%20Solid%20Background.svg");
-}
-
-.footer {
-    position: fixed;
-    bottom: 0%;
-    float:left;
-    margin-left: 1%;
-    /*width: 100%;
-    display: flex;
-     justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    Set the fixed height of the footer here */
-    /*
-    min-height: 10%;
-    height: 20%;
-    */
-}
-#privacypolicy {
-    text-decoration: none;
-    font-size: x-small;
-    color: #212121;
 }

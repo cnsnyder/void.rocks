@@ -43,6 +43,7 @@ top,bottom {
 }
 .excerpt {
   text-align: center;
+  height: 100rem;
 }
 
 main, .main {
@@ -73,6 +74,7 @@ ul{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  padding-left: 90px;
 }
 
 ul a {

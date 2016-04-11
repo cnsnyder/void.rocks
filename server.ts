@@ -1,9 +1,11 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var fs = require("fs");
-var mailchimp = require("./mailchimp.js");
-var path = require('path');
-var favicon = require('serve-favicon');
+/// <reference path="./typings/main.d.ts" />
+import express = require('express');
+import bodyParser = require('body-parser');
+import fs = require("fs");
+import path = require('path');
+// TODO: Convert to ts
+import * as mailchimp from './mailchimp';
+import favicon = require('serve-favicon');
 const debug = process.env.MTAPP_DEBUG;
 
 // Try to load the keys

@@ -4,7 +4,7 @@ import bodyParser = require('body-parser');
 import fs = require("fs");
 import path = require('path');
 // TODO: Convert to ts
-import * as mailchimp from './mailchimp.ts';
+import * as mailchimp from './mailchimp';
 import * as test from './test.ts';
 import favicon = require('serve-favicon');
 const debug = process.env.MTAPP_DEBUG;

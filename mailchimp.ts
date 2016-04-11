@@ -20,7 +20,7 @@ export function listSubscribe(email: string, key: string, listId: string, callba
     var req = http.request(post_options, function(res) {
       var statusCode: number = res.statusCode;
       var headers: string = JSON.stringify(res.headers)
-      console.log('STATUS: ' + status);
+      console.log('STATUS: ' + statusCode);
       console.log('HEADERS: ' + headers);
       res.setEncoding('utf8');
       res.on('data', function (chunk) {
@@ -29,7 +29,7 @@ export function listSubscribe(email: string, key: string, listId: string, callba
       });
       res.on('end', function() {
         console.log('No more data in response.');
-        callback(response_data, headers, status);
+        callback(response_data, headers, statusCode);
       });
     });
     req.on('error', function(e) {

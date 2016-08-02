@@ -18,7 +18,8 @@ module.exports = function(grunt) {
           },
           public_assets: {
             files: [
-              {expand: true, cwd: 'src/', src:['public/**/*.*', 'keys.json', '.keys.json'], dest: 'dist/'}
+              {expand: true, cwd: 'src/', src:['public/**/*', '.keys.json', 'views/**/*'], dest: 'dist/'},
+              {src: ['package.json'], dest: 'dist/'}
             ]
           }
         },

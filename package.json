@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "rm -rf typings",
     "postinstall": "typings install",
-    "typings": "typings"
+    "typings": "typings",
+    "start": "node server.js"
   },
   "author": "",
   "license": "MIT",

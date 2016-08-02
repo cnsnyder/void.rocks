@@ -30,26 +30,6 @@ module.exports = function(grunt) {
                 ext: '.css'
               }
             ],
-            options: {
-              sourcemap: 'none',
-              style: 'expanded',
-              require: 'susy'
-            }
-          }
-        },
-
-        shell: {
-          // congratulate the developer on a job well done.
-          affirmation: {
-            command: 'say -v Alex "Nice work, developer.  You deserve a cold beer."'
-          },
-          // converts coverage for js lines under to test to ts lines in the source
-          remapIstanbul: {
-            command: 'node_modules/.bin/remap-istanbul -i coverage/report-json/coverage-final.json -o coverage/display-report -t html'
-          },
-          // start up a browser to view the coverage report
-          coverage: {
-            command: 'node_modules/.bin/http-server -c-1 -o -p 9875 ./coverage/display-report'
           }
         },
 
@@ -80,10 +60,6 @@ module.exports = function(grunt) {
           pug: {
             files: ['src/**/*.pug'],
             tasks: ['pug:compile', 'bsReload:all']
-          },
-          userManual: {
-            files: ['user-manual-gitbook/*.md'],
-            tasks: ['clean:userManual', 'gitbook:dev', 'bsReload:all']
           }
         },
 
@@ -123,7 +99,7 @@ module.exports = function(grunt) {
                 ext: ".html"
               },{
                 cwd: "src",
-                src: "index.jade",
+                src: "index.pug",
                 dest: "./",
                 expand: true,
                 ext: ".html"
@@ -157,7 +133,5 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['build', 'bs-dist']);
     grunt.registerTask('build', ['clean:dist', 'pug:compile', 'ts']);
     grunt.registerTask('bs-dist', ['browserSync:dist', 'watch']);
-    // most web app tests are unit tests, so make that the default 'test' task.
-    grunt.registerTask('test', ['build','ts','karma:unit']);
-    grunt.registerTask('test-coverage', ['test', 'shell:remapIstanbul', 'shell:coverage']);
+
 };

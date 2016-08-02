@@ -15,6 +15,11 @@ module.exports = function(grunt) {
             files: [
               {expand: true, cwd: 'src/', src: ['**/*.html'], dest: 'dist/'}
             ]
+          },
+          public_assets: {
+            files: [
+              {expand: true, cwd: 'src/', src:['public/**/*.*', 'keys.json', '.keys.json'], dest: 'dist/'}
+            ]
           }
         },
 
@@ -131,7 +136,7 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['build', 'bs-dist']);
-    grunt.registerTask('build', ['clean:dist', 'pug:compile', 'ts']);
+    grunt.registerTask('build', ['clean:dist', 'pug:compile', 'ts', 'copy:public_assets']);
     grunt.registerTask('bs-dist', ['browserSync:dist', 'watch']);
 
 };

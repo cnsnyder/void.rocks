@@ -8,3 +8,4 @@ index.html
 .keys.json
 tags
 .DS_Store
+.baseDir.ts

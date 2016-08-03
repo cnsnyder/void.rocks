@@ -1,12 +1,11 @@
-FROM docker.io/node
+FROM node:4
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-RUN git clone https://github.com/cnsnyder/void.rocks.git
-WORKDIR /usr/src/app/void.rocks
+ADD ./dist ./
 
-COPY ./.keys.json keys.json
+COPY ./dist/.keys.json keys.json
 
 RUN npm install
 CMD [ "node", "server.js" ]

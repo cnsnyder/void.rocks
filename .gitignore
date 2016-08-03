@@ -1,4 +1,10 @@
-node_modules
+node_modules/
+typings/
+dist/
+npm-debug.log*
+index.html
+.tscache/
 .tern-project
 .keys.json
 tags
+.DS_Store
